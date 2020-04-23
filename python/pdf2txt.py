@@ -144,7 +144,14 @@ def main(argv):
     device.close()
     outfp.close()
 
-    file = open("cv.txt", "r")
+    bad_words = ['Personal', 'Information',
+                 'Projects', 'Internship', 'Technologies']
+    with open('cv.txt') as oldfile, open('cv_new.txt', 'w') as newfile:
+        for line in oldfile:
+            if not any(bad_word in line for bad_word in bad_words):
+                newfile.write(line)
+
+    file = open("cv_new.txt", "r")
     s = file.read()
     s = s.split('\n')
 
@@ -159,7 +166,8 @@ def main(argv):
     i = 0
     while(i < len(s)):
         s1 = s[i].split(': ')
-        details.append(s1[1])
+        if(len(s1) > 1):
+            details.append(s1[1])
         i += 1
 
     sql = "INSERT INTO entries (name, post, exp) VALUES (%s, %s, %s)"
