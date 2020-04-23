@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/bootstrap.css">
+	<link rel="stylesheet" href="assets/style.css">
+	<script src="assets/jquery.js"></script>
+	<script src="assets/script.js"></script>
+	<title>Index</title>
+</head>
+<body>
+	<div class="fixed-top text-center bg-dark text-light">
+		Please note that your CV must be in <a target="_blank" href="assets/cv_format.pdf" class="text-warning">this</a> format else it will be <span class="text-danger">discarded</span>.
+	</div>
+	<form enctype="multipart/form-data" id="cv_form">
+		<center>
+			<div class="container">
+				<div class="card shadow">
+					<div class="card-header">
+						Upload your CV
+					</div>
+					<div class="card-body">
+						<div class="custom-file">
+							<input name="file" accept="application/pdf" type="file" class="custom-file-input" id="cv">
+							<label class="custom-file-label" for="cv" id="cv-label">Choose file</label>
+						</div>
+					</div>
+					<div class="card-footer">
+						<button id="submit" class="btn btn-dark">Submit</button>
+					</div>
+				</div>
+				<div class="alert alert-success" role="alert" id="success">
+					<strong>Successfully uploaded CV</strong>
+				</div>
+				<div class="alert alert-warning" role="alert" id="alert">
+					<strong>Please select a PDF file</strong>
+				</div>
+			</div>
+		</center>
+	</form>
+	<div class="fixed-bottom text-center bg-dark text-light">
+		made with <i class="fa fa-heart text-danger"></i> | <a target="_blank" href="http://github.com/hasanify" class="text-warning">@hasanify</a>
+	</div>
+</body>
+</html>
